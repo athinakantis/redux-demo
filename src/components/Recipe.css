@@ -1,0 +1,75 @@
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 5rem 0 0;
+}
+
+.recipe-card {
+    max-width: 300px;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    overflow: hidden;
+
+    & img {
+        width: 300px;
+    }
+
+    & p {
+        font-size: 0.8rem;
+    }
+
+    & .recipe-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    & .recipe-details {
+        padding: 1rem;
+    }
+
+    & .meal-type-tags {
+        margin: 10px 0 0;
+    }
+
+    & .meal-type-tags button {
+        font-size: 0.8rem;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 4px;
+        color: white;
+
+        &:not(:last-of-type) {
+            margin-right: 5px;
+        }
+
+        &.breakfast {
+            background-color: yellow;
+            color: rgb(29, 27, 22);
+        }
+        &.dinner {
+            background-color: rgb(223, 136, 136);
+        }
+        &.lunch {
+            background-color: rgb(241, 177, 131);
+        }
+        &.snack,
+        .snacks {
+            background-color: rgb(170, 170, 243);
+        }
+        &.dessert {
+            background-color: #f7cfd8;
+        }
+        &.side {
+            background-color: #f4f8d3;
+        }
+        &.appetizer {
+            background-color: rgb(72, 113, 174);
+        }
+        &.beverage {
+            background-color: rgb(170, 243, 243);
+        }
+    }
+}
