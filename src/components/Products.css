@@ -1,0 +1,16 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+    row-gap: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    max-width: 300px;
+    padding: 1rem;
+    & img {
+        width: 200px;
+    }
+}
