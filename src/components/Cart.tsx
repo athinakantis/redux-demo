@@ -20,20 +20,40 @@ const Cart = () => {
                     {items.length > 0 &&
                         items.map((item) => (
                             <div key={item.id} className='cart-item'>
-                                <div className="cart-item-details">
-
-                                <p className='title'>{item.title}</p>
-                                <p>€{item.price * item.quantity}</p>
-                                <p>Amount: {item.quantity}</p>
+                                <div className='cart-item-details'>
+                                    <p className='title'>{item.title}</p>
+                                    <p>€{item.price * item.quantity}</p>
+                                    <p>Amount: {item.quantity}</p>
                                 </div>
-                                <div className="cart-item-actions">
-                                    <button onClick={() => dispatch(addToCart(item))}>+</button>
-                                    <button onClick={() => dispatch(removeFromCart(item))}>-</button>
+                                <div className='cart-item-actions'>
+                                    <button
+                                        onClick={() =>
+                                            dispatch(addToCart(item))
+                                        }
+                                    >
+                                        +
+                                    </button>
+                                    <button
+                                        onClick={() =>
+                                            dispatch(removeFromCart(item))
+                                        }
+                                    >
+                                        -
+                                    </button>
                                 </div>
                             </div>
                         ))}
 
-                    <p>Total: €</p>
+                    <p>
+                        Total: €
+                        {items
+                            .reduce(
+                                (total, item) =>
+                                    total + item.price * item.quantity,
+                                0
+                            )
+                            .toFixed(2)}
+                    </p>
                     <button onClick={() => dispatch(toggleCart())}>
                         Close
                     </button>
