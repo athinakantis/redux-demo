@@ -1,12 +1,16 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Products from './components/Products';
+import { Recipes } from './components/Recipes';
 
 function App() {
-  return (
-    <>
-    <h1>Hello world</h1>
-    </>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/products' element={<Products />} />
+                <Route path='/recipes' element={<Recipes />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
